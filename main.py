@@ -21,8 +21,12 @@ def generate_password():
     password_list = password_letters + password_symbols + password_numbers
     shuffle(password_list)
 
+    # joins all strings, between it will add any symbol in "". Can be used on tuples/dicts/list.
     password = "".join(password_list)
+    # first is position "0", so from start and second is text (string).
     password_entry.insert(0, password)
+    # copies string, so when you generate password it would be copied,
+    # same as like ctrl+c. pyperclip.paste() can be used too.
     pyperclip.copy(password)
 
 
